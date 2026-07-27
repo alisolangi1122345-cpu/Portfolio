@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portfolio — Demo (modal integration reference)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Same two stylesheets your real homepage needs -->
+<link rel="stylesheet" href="../project/project.css" />
+<link rel="stylesheet" href="../project/project-modal.css" />
+
+<style>
+  /* Demo-only styles for this sample homepage — not part of the reusable system */
+  .demo-page { max-width: 1000px; margin: 0 auto; padding: 60px 20px 100px; }
+  .demo-page h1 { font-family: var(--font-display); font-size: 2rem; margin-bottom: 6px; }
+  .demo-page p.lead { color: var(--text-muted); margin-bottom: 40px; }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .project-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; padding: 20px; box-shadow: var(--shadow);
+  }
+  .project-card img { border-radius: 10px; margin-bottom: 14px; aspect-ratio: 4/3; object-fit: cover; }
+  .project-card h3 { font-family: var(--font-display); margin: 0 0 8px; }
+  .project-card p { color: var(--text-muted); font-size: 0.9rem; margin: 0 0 16px; }
+  .card-actions { display: flex; gap: 10px; }
+</style>
+</head>
+<body>
+  <div class="demo-page">
+    <h1>My Electronics Projects</h1>
+    <p class="lead">Demo homepage — click "View Project" to see the popup in action (no page navigation).</p>
+
+    <div class="card-grid" id="cardGrid"></div>
+  </div>
+
+  <!-- Data must load before project-modal.js -->
+  <script src="../project/projects.js"></script>
+  <script src="../project/project-modal.js"></script>
+
+  <script>
+    // This block only builds the demo cards from PROJECTS — your real
+    // homepage almost certainly already has its own card markup. The only
+    // part that matters for the modal is the button with data-project-modal.
+    const grid = document.getElementById('cardGrid');
+    Object.values(PROJECTS).forEach(function (project) {
+      const card = document.createElement('div');
+      card.className = 'project-card';
+      card.innerHTML = `
+        <img src="${project.images[0]}" alt="${project.title}">
+        <h3>${project.title}</h3>
+        <p>${project.shortDescription}</p>
+        <div class="card-actions">
+          <button class="btn btn--primary" data-project-modal="${project.id}">View Project</button>
+          <a class="btn btn--ghost" href="${project.githubLink}" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>`;
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,798 @@
+/* =============================================================================
+   project.css
+   Design language: "engineering datasheet / blueprint" — a technical aesthetic
+   that fits an electronics portfolio. Dot-grid backgrounds evoke perfboard,
+   monospace is reserved for anything that reads like a spec value, and every
+   section is numbered like a datasheet's numbered clauses.
+   ============================================================================= */
+
+/* -----------------------------------------------------------------------
+   1. DESIGN TOKENS
+   ----------------------------------------------------------------------- */
+:root {
+  /* Type */
+  --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+
+  /* Layout */
+  --max-width: 1180px;
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --gap: 24px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.16, 0.84, 0.44, 1);
+  --dur-fast: 160ms;
+  --dur-mid: 320ms;
+  --dur-slow: 600ms;
+}
+
+/* Dark theme (default) — deep blueprint navy */
+:root,
+html[data-theme="dark"] {
+  --bg: #0b1420;
+  --bg-raised: #101d29;
+  --surface: #132330;
+  --surface-2: #17293a;
+  --border: rgba(232, 240, 248, 0.09);
+  --border-strong: rgba(232, 240, 248, 0.16);
+  --text: #e7edf3;
+  --text-muted: #93a4b7;
+  --text-faint: #5f7285;
+  --accent: #e8a33d; /* copper / solder */
+  --accent-strong: #f4b85c;
+  --accent-2: #59e6a4; /* phosphor green */
+  --shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.55);
+  --grid-line: rgba(232, 240, 248, 0.045);
+}
+
+/* Light theme — brushed-aluminum / lab-bench feel */
+html[data-theme="light"] {
+  --bg: #eef1f4;
+  --bg-raised: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f4f6f8;
+  --border: rgba(16, 32, 47, 0.09);
+  --border-strong: rgba(16, 32, 47, 0.16);
+  --text: #101b26;
+  --text-muted: #4b5a68;
+  --text-faint: #8794a1;
+  --accent: #b5691a;
+  --accent-strong: #96550f;
+  --accent-2: #1f9d63;
+  --shadow: 0 20px 50px -24px rgba(16, 32, 47, 0.25);
+  --grid-line: rgba(16, 32, 47, 0.05);
+}
+
+/* -----------------------------------------------------------------------
+   2. RESET / BASE
+   ----------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 1px 1px, var(--grid-line) 1px, transparent 1px) 0
+      0 / 28px 28px,
+    var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition:
+    background-color var(--dur-mid) var(--ease),
+    color var(--dur-mid) var(--ease);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+a {
+  color: inherit;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--accent);
+  color: #10151c;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* -----------------------------------------------------------------------
+   3. HEADER
+   ----------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px clamp(16px, 4vw, 40px);
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(10px) saturate(1.1);
+  border-bottom: 1px solid var(--border);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  transition: color var(--dur-fast) var(--ease);
+}
+.back-link:hover {
+  color: var(--accent);
+}
+.back-link .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.header-mark {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: var(--text-faint);
+}
+.mark-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-2);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-2) 20%, transparent);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text-muted);
+  position: relative;
+}
+.theme-toggle .icon {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  transition:
+    opacity var(--dur-mid) var(--ease),
+    transform var(--dur-mid) var(--ease);
+}
+.theme-toggle .icon-moon {
+  opacity: 0;
+  transform: rotate(-40deg) scale(0.6);
+}
+html[data-theme="dark"] .theme-toggle .icon-sun {
+  opacity: 0;
+  transform: rotate(40deg) scale(0.6);
+}
+html[data-theme="dark"] .theme-toggle .icon-moon {
+  opacity: 1;
+  transform: none;
+}
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* -----------------------------------------------------------------------
+   4. STATE PANELS (loading / not-found)
+   ----------------------------------------------------------------------- */
+.project-root {
+  min-height: 70vh;
+}
+
+.state-panel {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 14px;
+  padding: 40px 20px;
+}
+.state-panel--hidden {
+  display: none;
+}
+
+.scope-spinner {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid var(--border-strong);
+  border-top-color: var(--accent-2);
+  animation: spin 0.9s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.not-found-glyph {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px dashed var(--border-strong);
+  font-family: var(--font-mono);
+  font-size: 1.6rem;
+  color: var(--accent);
+}
+#notFoundState h1 {
+  font-family: var(--font-display);
+  margin: 4px 0 0;
+}
+#notFoundState p {
+  color: var(--text-muted);
+  max-width: 40ch;
+}
+
+/* -----------------------------------------------------------------------
+   5. HERO
+   ----------------------------------------------------------------------- */
+.hero {
+  position: relative;
+  height: min(62vh, 560px);
+  min-height: 340px;
+  overflow: hidden;
+  animation: fadeUp var(--dur-slow) var(--ease) both;
+}
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+}
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 10, 15, 0.15) 0%,
+    rgba(6, 10, 15, 0.15) 40%,
+    var(--bg) 100%
+  );
+}
+html[data-theme="light"] .hero-scrim {
+  background: linear-gradient(
+    180deg,
+    rgba(20, 30, 40, 0.1) 0%,
+    rgba(20, 30, 40, 0.05) 45%,
+    var(--bg) 100%
+  );
+}
+.hero-inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 40px) 36px;
+}
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: #eaf6ee;
+  background: rgba(10, 16, 22, 0.55);
+  border: 1px solid rgba(89, 230, 164, 0.4);
+  padding: 5px 10px;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+}
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-2);
+  box-shadow: 0 0 8px var(--accent-2);
+}
+.hero-date {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.05;
+  margin: 0 0 12px;
+  color: #fff;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+  max-width: 22ch;
+}
+.hero-subtitle {
+  font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 62ch;
+  margin: 0;
+}
+
+/* -----------------------------------------------------------------------
+   6. META STRIP (datasheet-style spec row) — the signature element
+   ----------------------------------------------------------------------- */
+.meta-strip {
+  max-width: var(--max-width);
+  margin: -28px auto 0;
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  animation: fadeUp var(--dur-slow) var(--ease) both;
+  animation-delay: 60ms;
+}
+.meta-item {
+  padding: 16px 18px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.meta-item:last-child {
+  border-right: none;
+}
+.meta-label {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.meta-value {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* -----------------------------------------------------------------------
+   7. LAYOUT GRID
+   ----------------------------------------------------------------------- */
+.project-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px clamp(16px, 4vw, 40px) 90px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: var(--gap);
+  align-items: start;
+}
+.col-main,
+.col-side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+.col-side {
+  position: sticky;
+  top: 90px;
+}
+
+@media (max-width: 900px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+  .col-side {
+    position: static;
+  }
+}
+
+/* -----------------------------------------------------------------------
+   8. PANELS (cards) — rounded corners + professional shadow
+   ----------------------------------------------------------------------- */
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 26px clamp(18px, 3vw, 30px);
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeUp var(--dur-mid) var(--ease) forwards;
+}
+/* stagger the reveal slightly for each panel in view */
+.col-main .panel:nth-child(1) {
+  animation-delay: 40ms;
+}
+.col-main .panel:nth-child(2) {
+  animation-delay: 90ms;
+}
+.col-main .panel:nth-child(3) {
+  animation-delay: 140ms;
+}
+.col-main .panel:nth-child(4) {
+  animation-delay: 190ms;
+}
+.col-main .panel:nth-child(5) {
+  animation-delay: 240ms;
+}
+
+.panel-title {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 18px;
+}
+.panel-title--small {
+  font-size: 1.02rem;
+}
+.panel-index {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--accent);
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  padding: 2px 7px;
+}
+
+.prose {
+  color: var(--text-muted);
+}
+.prose p {
+  margin: 0 0 14px;
+}
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+/* -----------------------------------------------------------------------
+   9. FEATURES LIST
+   ----------------------------------------------------------------------- */
+.feature-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+.feature-list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+.feature-list li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  border-radius: 5px;
+  background: color-mix(in srgb, var(--accent-2) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-2) 45%, transparent);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3 3 7-7' fill='none' stroke='%2359e6a4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* -----------------------------------------------------------------------
+   10. CIRCUIT DIAGRAM
+   ----------------------------------------------------------------------- */
+.diagram-frame {
+  display: block;
+  width: 100%;
+  position: relative;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 0;
+  background: var(--surface-2);
+  overflow: hidden;
+  transition:
+    transform var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease);
+}
+.diagram-frame:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -14px rgba(0, 0, 0, 0.4);
+}
+.diagram-frame img {
+  width: 100%;
+}
+.diagram-hint {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  background: rgba(10, 16, 22, 0.65);
+  color: #fff;
+  padding: 5px 9px;
+  border-radius: 999px;
+}
+
+/* -----------------------------------------------------------------------
+   11. GALLERY
+   ----------------------------------------------------------------------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+.gallery-item {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  aspect-ratio: 4 / 3;
+  cursor: pointer;
+  background: var(--surface-2);
+  transition: transform var(--dur-fast) var(--ease);
+}
+.gallery-item:hover {
+  transform: scale(1.03);
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* -----------------------------------------------------------------------
+   12. VIDEO
+   ----------------------------------------------------------------------- */
+.video-wrapper {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.video-wrapper video,
+.video-wrapper iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  display: block;
+  border: 0;
+}
+.video-empty {
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+/* -----------------------------------------------------------------------
+   13. TECH CHIPS — styled like IC package pins
+   ----------------------------------------------------------------------- */
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chip {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  padding: 6px 12px 6px 10px;
+  border-radius: 6px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  position: relative;
+}
+.chip::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-right: 7px;
+  vertical-align: middle;
+}
+
+/* -----------------------------------------------------------------------
+   14. BOM TABLE (components)
+   ----------------------------------------------------------------------- */
+.bom-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.bom-table th {
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  padding: 0 8px 8px 0;
+  border-bottom: 1px solid var(--border-strong);
+}
+.bom-table td {
+  padding: 9px 8px 9px 0;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  color: var(--text-muted);
+}
+.bom-table td:first-child {
+  color: var(--text);
+  font-weight: 500;
+}
+.bom-table tr:last-child td {
+  border-bottom: none;
+}
+.bom-qty {
+  font-family: var(--font-mono);
+  color: var(--accent);
+}
+
+/* -----------------------------------------------------------------------
+   15. BUTTONS
+   ----------------------------------------------------------------------- */
+.actions-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  transition:
+    transform var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease),
+    background var(--dur-fast) var(--ease);
+}
+.btn .icon {
+  width: 18px;
+  height: 18px;
+}
+.btn--block {
+  width: 100%;
+}
+.btn--primary {
+  background: var(--accent);
+  color: #1a1204;
+}
+.btn--sm {
+  padding: 7px 12px;
+  font-size: 0.82rem;
+}
+.btn--primary:hover {
+  background: var(--accent-strong);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px -12px
+    color-mix(in srgb, var(--accent) 60%, transparent);
+}
+.btn--ghost {
+  background: transparent;
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+.btn--ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* -----------------------------------------------------------------------
+   16. LIGHTBOX
+   ----------------------------------------------------------------------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(6, 10, 15, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  backdrop-filter: blur(6px);
+  animation: fadeIn var(--dur-fast) var(--ease) both;
+}
+.lightbox img {
+  max-width: 100%;
+  max-height: 88vh;
+  border-radius: var(--radius-md);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* -----------------------------------------------------------------------
+   17. ANIMATIONS
+   ----------------------------------------------------------------------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
