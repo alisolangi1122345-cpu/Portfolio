@@ -555,7 +555,7 @@ hamburger takes over at 960px. */
   gap: 7px;
 }
   .nav__link{
-    padding: 0;
+    padding:5px;
     font-size: 0.5rem;
     
   }
