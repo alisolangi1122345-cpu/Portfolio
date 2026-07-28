@@ -582,6 +582,38 @@ hamburger takes over at 960px. */
   }
 }
 
+
+@media (max-width: 325px) {
+  .container {
+    padding-inline: 15px;
+  }
+  .site-header{
+    display: flex;
+    height: 5rem;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+.nav__menu {
+    display: flex;
+    align-items: center;
+    width: 17rem;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-content: center;
+}
+    .hero__inner {position: relative;
+        display: grid;
+        grid-template-columns: 1.5fr;
+    }
+
+    .hero__content{
+      padding-bottom: 100rem;
+    }
+}
 /* =========================================================
    SolangTech Portfolio — responsive.css
    Part 2 : About + Skills + Projects + Timeline
