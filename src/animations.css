@@ -72,7 +72,3 @@
 .nav__menu {
   transition: transform var(--transition-med), opacity var(--transition-med), visibility var(--transition-med);
 }
-
-/* Note: .trace-rail__fill's stroke-dashoffset is driven directly by main.js
-   in step with scroll position, so no CSS keyframe animation is applied here
-   (it would fight the JS-controlled value). */

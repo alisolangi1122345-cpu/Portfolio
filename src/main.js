@@ -24,31 +24,31 @@
   /* ---------------------------------------------------
      Mobile nav toggle
   --------------------------------------------------- */
-  function initNavToggle() {
-    const toggle = document.getElementById('navToggle');
-    const menu = document.getElementById('navMenu');
-    if (!toggle || !menu) return;
+  // function initNavToggle() {
+  //   const toggle = document.getElementById('navToggle');
+  //   const menu = document.getElementById('navMenu');
+  //   if (!toggle || !menu) return;
 
-    function closeMenu() {
-      menu.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-    }
+  //   function closeMenu() {
+  //     menu.classList.remove('is-open');
+  //     toggle.setAttribute('aria-expanded', 'false');
+  //   }
 
-    toggle.addEventListener('click', () => {
-      const isOpen = menu.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', String(isOpen));
-    });
+  //   toggle.addEventListener('click', () => {
+  //     const isOpen = menu.classList.toggle('is-open');
+  //     toggle.setAttribute('aria-expanded', String(isOpen));
+  //   });
 
-    // Close menu after a link is chosen (mobile UX)
-    menu.querySelectorAll('.nav__link').forEach((link) => {
-      link.addEventListener('click', closeMenu);
-    });
+  //   // Close menu after a link is chosen (mobile UX)
+  //   menu.querySelectorAll('.nav__link').forEach((link) => {
+  //     link.addEventListener('click', closeMenu);
+  //   });
 
     // Close on Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMenu();
-    });
-  }
+  //   document.addEventListener('keydown', (e) => {
+  //     if (e.key === 'Escape') closeMenu();
+  //   });
+  // }
 
   /* ---------------------------------------------------
      Signature circuit-trace scroll rail: dash-offset maps
@@ -191,11 +191,11 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     initHeaderScroll();
-    initNavToggle();
+    // initNavToggle();
     initTraceRail();
     initSmoothScroll();
     initBackToTop();
     initContactForm();
     initFooterYear();
-  });
-})();
+  });}
+)();
