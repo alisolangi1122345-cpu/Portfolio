@@ -598,6 +598,9 @@ hamburger takes over at 960px. */
   /* justify-content: space-between; */
   /* gap:1rem; */
 }
+.nav__brand{
+  margin-top: 1px;
+}
 .nav__menu {
     display: flex;
     align-items: center;
