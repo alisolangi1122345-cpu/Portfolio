@@ -204,6 +204,7 @@ textarea:focus-visible {
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   border-bottom-color: var(--border-soft);
   padding-block: 12px;
+  position:fixed;
 }
 .nav {
   display: flex;
