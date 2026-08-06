@@ -420,7 +420,7 @@
 
 
     <!-- ============ PROJECTS ============ -->
-    <section class="section" id="projects">
+    <!-- <section class="section" id="projects">
       <div class="container">
         <p class="eyebrow reveal-up"><span class="eyebrow__code"></spa
           n>PROJECTS</p>
@@ -663,8 +663,55 @@
 
         </div>
       </div>
-    </section>
+    </section> -->
+    <section class="section" id="projects">
+      <div class="container">
+        <p class="eyebrow reveal-up">PROJECTS</p>
+        <h2 class="section__title reveal-up">Projects I've built while learning</h2>
+        <p class="section__sub reveal-up">Personal and coursework projects — built to understand a concept properly, not
+          to impress anyone.</p>
+        <template id="project-card-template">
+          <article class="project-card reveal-up  ">
 
+            <div class="project-card__media">
+
+              <img class="project-card__image" src="" alt="" loading="lazy" width="480" height="300" />
+
+              <div class="project-card__overlay"></div>
+
+            </div>
+
+            <div class="project-card__body">
+
+              <h3 class="project-card__title"></h3>
+
+              <p class="project-card__description"></p>
+
+              <ul class="project-card__tags">
+                <!-- Tags will be added by JavaScript -->
+              </ul>
+
+              <div class="project-card__links">
+
+                <button class="btn btn--sm btn--primary project-view-btn" data-project-modal="">
+                  View Project
+                </button>
+
+                <a class="btn btn--sm btn--ghost project-github-btn" href="" target="_blank">
+                  Github
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </template>
+      <div id="projects-grid" class="projects__grid">
+  </div>
+      </div>
+    </section>
     <!-- ============ LEARNING JOURNEY ============ -->
     <!-- <section class="section section--alt" id="journey">
       <div class="container">
@@ -948,6 +995,7 @@
   <script src="./src/main.js" defer></script>
   <script src="project/projects.js"></script>
   <script src="project/project-modal.js"></script>
+  <script src="./src/renderProjects.js"></script>
 </body>
 
 </html>

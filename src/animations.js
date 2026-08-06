@@ -191,4 +191,5 @@
     initTimelineFill();
     initHeroCanvas();
   });
+  window.initScrollReveal = initScrollReveal;
 })();

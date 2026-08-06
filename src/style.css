@@ -759,9 +759,7 @@ textarea:focus-visible {
 }
 /* ---------- Projects ---------- */
 .projects__grid {
-  /* display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 35px; */
+  
    display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 24px;
@@ -837,12 +835,12 @@ textarea:focus-visible {
 }
 .project-card__body h3 {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1rem;
   margin-bottom: 10px;
 }
 .project-card__body p {
   color: var(--text-secondary);
-  font-size: 0.92rem;
+  font-size: 0.7rem;
   margin-bottom: 16px;
 }
 .project-card__tags {
@@ -853,7 +851,7 @@ textarea:focus-visible {
 }
 .project-card__tags li {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   padding: 4px 10px;
   border-radius: 999px;
   border: 1px solid var(--border-soft);

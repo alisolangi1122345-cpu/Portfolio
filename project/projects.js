@@ -1,32 +1,9 @@
-/**
- * projects.js
- * ---------------------------------------------------------------------------
- * Single source of truth for every project on the portfolio.
- *
- * HOW THIS FILE WORKS
- * project.html (and the modal, project-modal.js) read this file, then look
- * up the project whose key matches "?id=..." in the URL, or the id passed
- * to ProjectModal.open(id) / data-project-modal="id".
- *
- * ⚠️ IMPORTANT — PLEASE READ BEFORE PUBLISHING
- * These 9 projects were generated from the images/videos you uploaded
- * (schematics, PCB layouts, 3D renders, photos, demo videos). I could see
- * what each circuit/board looks like, so titles, descriptions and asset
- * paths are accurate to what's in your files — but I do NOT know your
- * actual build specifics, so the following are placeholders you MUST edit:
- *   - githubLink   → currently "#" for every project, replace with your repo URLs
- *   - completionDate → currently a rough guess, replace with the real month/year
- *   - technologies / components / features → reasonable best-guesses based on
- *     what's visible in the images; double-check these against your real BOM
- *     and firmware before publishing.
- * Search for "TODO" comments below — every placeholder is marked.
- * ---------------------------------------------------------------------------
- */
+
 
 const projects = {
 
   // ---------------------------------------------------------------------
-  // 1. Buck Converter
+  //! 1. Buck Converter
   // ---------------------------------------------------------------------
   "buck-converter": {
     id: "buck-converter",
@@ -58,7 +35,7 @@ const projects = {
   },
 
   // ---------------------------------------------------------------------
-  // 2. Dual Output Power Supply
+  //! 2. Dual Output Power Supply
   // ---------------------------------------------------------------------
   "dual-output-supply": {
     id: "dual-output-supply",
@@ -90,7 +67,7 @@ const projects = {
   },
 
   // ---------------------------------------------------------------------
-  // 3. Digital Bench Power Supply
+  //! 3. Digital Bench Power Supply
   // ---------------------------------------------------------------------
   "digital-bench-power-supply": {
     id: "digital-bench-power-supply",
@@ -122,7 +99,7 @@ const projects = {
   },
 
   // ---------------------------------------------------------------------
-  // 4. ESP32 Bluetooth Car
+  //!  4. ESP32 Bluetooth Car
   // ---------------------------------------------------------------------
   "esp32-bluetooth-car": {
     id: "esp32-bluetooth-car",
@@ -157,7 +134,7 @@ const projects = {
   },
 
   // ---------------------------------------------------------------------
-  // 5. Home Automation System
+  //! 5. Home Automation System
   // ---------------------------------------------------------------------
   "home-automation-system": {
     id: "home-automation-system",
@@ -187,7 +164,7 @@ const projects = {
   },
 
   // ---------------------------------------------------------------------
-  // 6. LED Chaser
+  //! 6. LED Chaser
   // ---------------------------------------------------------------------
   "led-chaser": {
     id: "led-chaser",
@@ -219,7 +196,7 @@ const projects = {
   },
 
   // ---------------------------------------------------------------------
-  // 7. RFID Attendance System
+  //! 7. RFID Attendance System
   // ---------------------------------------------------------------------
   "rfid-attendance-system": {
     id: "rfid-attendance-system",
@@ -249,7 +226,7 @@ const projects = {
   },
 
   // ---------------------------------------------------------------------
-  // 8. Smoke + Fire Detection System
+  //! 8. Smoke + Fire Detection System
   // ---------------------------------------------------------------------
   "smoke-fire-detection": {
     id: "smoke-fire-detection",
@@ -282,7 +259,7 @@ const projects = {
   },
 
   // ---------------------------------------------------------------------
-  // 9. STM32 Project
+  //! 9. STM32 Project
   // ---------------------------------------------------------------------
   "stm32": {
     id: "stm32",
@@ -291,8 +268,8 @@ const projects = {
       "A custom PCB built around an STM32 microcontroller, designed and verified through schematic capture, PCB layout, and a 3D render.",
     fullDescription:
       "This board is built around an STM32 microcontroller as its main processing element. The full design flow — schematic capture, PCB routing, and a 3D render for mechanical/enclosure checks — was completed before fabrication.\n\nNOTE: Please replace this description with what the board actually does (e.g. motor control, data acquisition, a specific interface project) — the uploaded files show the schematic/PCB/3D render but not the firmware or end application.",
-    completionDate: "2026", // TODO: replace with exact date
-    technologies: ["STM32", "Embedded C", "PCB Design"], // TODO: add the real technologies (e.g. specific peripherals/protocols used)
+    completionDate: "2026",
+    technologies: ["STM32", "Embedded C", "PCB Design"], 
     components: [
       { name: "STM32 Microcontroller", qty: "1", note: "Main processor" }, // TODO: confirm exact part (e.g. STM32F103C8T6)
       { name: "Supporting Passives", qty: "—", note: "Decoupling, pull-ups, etc." },
@@ -301,9 +278,8 @@ const projects = {
     features: [
       "Custom STM32-based PCB",
       "Full design flow: schematic → PCB → 3D render → fabrication"
-      // TODO: replace with the actual function of this board — what does it control/measure/do?
     ],
-    githubLink: "https://github.com/alisolangi1122345-cpu/STM32-Development-Board-PCB.git", // TODO: add your repo URL
+    githubLink: "https://github.com/alisolangi1122345-cpu/STM32-Development-Board-PCB.git", // TODO: add your repo URL  
     circuitDiagram: "/project/assets/STM32/schematic.png",
     images: [
 
@@ -311,7 +287,88 @@ const projects = {
       "/project/assets/STM32/PCB layout.png",
     ],
     video: ""
-  }
+  },
+
+
+
+  // ---------------------------------------------------------------------
+  //! 10. Water Tank Monitoring System
+  // ---------------------------------------------------------------------  
+  
+  "water-tank-monitoring-system": {
+  id: "water-tank-level-controller",
+  title: "Automatic Water Tank Level Controller",
+  shortDescription:
+    "An Arduino-based automatic water tank controller that monitors water level using an ultrasonic sensor and automatically switches the water pump ON/OFF.",
+
+  fullDescription:
+    "This project is an automatic water tank level controller developed using Arduino Uno. The system continuously measures the water level with an HC-SR04 ultrasonic sensor and automatically controls a water pump through a relay module.\n\nA 16×2 LCD provides real-time information about the tank level and pump status, allowing users to monitor the system easily. The controller helps prevent water overflow, protects the pump from dry running, and eliminates the need for manual pump operation. The project was first validated through simulation and then implemented successfully on real hardware.",
+
+  completionDate: "2026",
+
+  technologies: [
+    "Arduino Uno",
+    "Embedded C",
+    "Ultrasonic Sensor",
+    "Relay Control"
+  ],
+
+  components: [
+    {
+      name: "Arduino Uno",
+      qty: "1",
+      note: "Main microcontroller"
+    },
+    {
+      name: "HC-SR04 Ultrasonic Sensor",
+      qty: "1",
+      note: "Measures water level"
+    },
+    {
+      name: "1-Channel Relay Module",
+      qty: "1",
+      note: "Controls the water pump"
+    },
+    {
+      name: "16×2 LCD Display",
+      qty: "1",
+      note: "Displays water level and pump status"
+    },
+    {
+      name: "12V DC Water Pump",
+      qty: "1",
+      note: "Fills the water tank automatically"
+    },
+    {
+      name: "Power Supply",
+      qty: "1",
+      note: "Powers the system"
+    }
+  ],
+
+  features: [
+    "Automatic pump ON/OFF control",
+    "Real-time water level monitoring",
+    "LCD status display",
+    "Prevents tank overflow",
+    "Protects pump from dry running",
+    "Fully tested on physical hardware"
+  ],
+
+  githubLink:
+  "https://github.com/alisolangi1122345-cpu/-Automatic-Water-Tank-Level-Controller.git",
+
+  circuitDiagram:
+    "/project/assets/A-W-T-M-system/image.png",
+
+  images: [
+    
+    "/project/assets/A-W-T-M-system/image.png"
+  ],
+
+  video:
+    "/project/assets/A-W-T-M-system/Video.mp4"
+},
 
 };
 
