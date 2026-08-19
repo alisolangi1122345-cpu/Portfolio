@@ -1,0 +1,1310 @@
+/* 
+===========================================
+==============
+   SolangTech Portfolio — Responsive Rules
+(FIXED)
+   Breakpoints: 1180 (laptop) / 960
+(tablet) / 680 (mobile)
+   Load this AFTER style.css
+  
+===========================================
+============== */
+/* ---------- Laptop ----------
+@media (max-width: 1180px) {
+  .skills__grid { grid-template-columns:
+repeat(4, 1fr); }
+  .projects__grid { grid-template-columns:
+repeat(2, 1fr); }
+  /* ===== Fixed Responsive Overflow =====
+     With the gap:15rem bug removed in
+style.css, this isn't strictly
+     required anymore, but keeping the menu
+gap tighter on laptop widths
+     avoids crowding right before the
+hamburger takes over at 960px. */
+/* .nav__menu { gap: 4px; } */
+/* } ---------- Tablet ---------- */
+/* @media (max-width: 960px) { */
+/* :root {
+    --header-h: var(--header-h-mobile);
+  }
+
+  .nav__toggle { display: flex; }
+  .nav__menu {
+    position: fixed;
+    inset: 74px 16px auto 16px;
+    flex-direction: column;
+    align-items: stretch;
+    background: rgba(10,13,20,0.95);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
+    padding: 12px; */
+/* gap: 4px;
+    transform: translateY(-12px);
+    opacity: 1;
+    visibility: hidden;
+    box-shadow: var(--shadow-soft);
+    width: auto;
+    max-width: calc(100vw - 32px);
+    z-index: 55;
+  }
+  .nav__menu.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav__link { padding: 14px 16px; }
+  .hero__inner { grid-template-columns: 1fr; text-align: center; margin-top:1rem;}
+  .hero__content { order: 2; }
+  .hero__portrait { order: 1; }
+  .hero__desc { margin-inline: auto; }
+  .hero__actions, .hero__socials { justify-content: center; } 
+  .eyebrow, .hero__actions { justify-content: center; }
+  .about__grid { grid-template-columns: 1fr; }
+  .about__stats { grid-template-columns: 1fr 1fr; }
+  .skills__grid { grid-template-columns: repeat(3, 1fr); }
+  .contact__grid { grid-template-columns: 1fr; }
+  .certs__grid { grid-template-columns: 1fr 1fr; }
+  .trace-rail { width: 4px; }
+  .education__grid { max-width: 100%; }
+/* } 
+@media (max-width: 960px) {
+  .nav__toggle { display: flex; }
+  .nav__menu {
+    position: fixed;
+    inset: 74px 16px auto 16px;
+    flex-direction: column;
+    align-items: stretch;
+    background: rgba(10,13,20,0.95);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
+    padding: 12px;
+    gap: 4px;
+    transform: translateY(-12px);
+    opacity: 1;
+    visibility: hidden;
+    box-shadow: var(--shadow-soft);
+    width: auto;
+    max-width: calc(100vw - 32px);
+    z-index: 55;
+  }
+  .nav__menu.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav__link { padding: 14px 16px; }
+  .hero__inner { grid-template-columns: 1fr; text-align: center; margin-top:1rem;}
+  .hero__content { order: 2; }
+  .hero__portrait { order: 1; }
+  .hero__desc { margin-inline: auto; }
+  .hero__actions, .hero__socials { justify-content: center; }
+  .eyebrow, .hero__actions { justify-content: center; }
+  .about__grid { grid-template-columns: 1fr; }
+  .about__stats { grid-template-columns: 1fr 1fr; }
+  .skills__grid { grid-template-columns: repeat(3, 1fr); }
+  .contact__grid { grid-template-columns: 1fr; }
+  .certs__grid { grid-template-columns: 1fr 1fr; }
+  .trace-rail { width: 4px; }
+  .education__grid { max-width: 100%; }
+}
+/* 
+@media (max-width: 680px) {
+  .container { padding-inline: 18px; }
+  .section { padding-block: 76px; }
+
+  .hero {
+    padding-top: 140px;
+    min-height: auto;
+    padding-bottom: 48px;
+  }
+  .hero__title { font-size: 2.1rem; }
+  .skills__grid { grid-template-columns: repeat(2, 1fr); }
+  .projects__grid { grid-template-columns: 1fr; }
+  .certs__grid { grid-template-columns: 1fr; }
+  .about__stats { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .timeline__line { left: 18px; }
+  .timeline__item, .timeline__item--right {
+    width: 100%;
+    margin-left: 0;
+    padding: 0 0 44px 44px;
+    text-align: left;
+  }
+  .timeline__dot, .timeline__item--right .timeline__dot {
+    left: 11px; right: auto;
+  }
+  .footer__inner { flex-direction: column; text-align: center; }
+  .trace-rail { display: none; }
+  .nav { gap: 8px; }
+  .nav__brand-text { font-size: 1rem; }
+  .portrait-frame { width: min(300px, 78vw); }
+}
+@media (max-width: 480px) {
+
+    /* Navbar */
+/* .site-header .nav.container {
+        flex-direction: column;
+        height: auto;
+        gap: 1rem;
+        margin: 0 1rem;
+    }
+
+    .nav__brand-text {
+        font-size: 1.3rem;
+    }
+
+    .nav__menu {
+        flex-direction: row;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .nav__menu li {
+        flex-shrink: 1;
+    } */
+
+/* Hero Section */
+/* .hero .hero__inner {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+
+    .hero .hero__portrait,
+    .hero .hero__portrait img {
+        width: 80%;
+        margin-bottom: 1rem;
+        border-radius: 25px;
+    }
+
+    .hero .hero__content {
+        width: 90%;
+        height: auto;
+        margin-top: 2rem;
+    }
+
+} */
+
+/* =========================================================
+   /* SolangTech Portfolio — responsive.css
+   Part 1 : Navbar + Hero */
+/* ========================================================= */
+
+/* =========================================================
+   /* <= 1200px */
+/* ========================================================= */
+@media (max-width: 1200px) {
+  :root {
+    --header-h: 78px;
+  }
+
+  .container {
+    max-width: 100%;
+    padding-inline: 32px;
+  }
+  
+.hero{
+  height: auto;}
+
+  .hero__inner {
+    gap: 40px;
+  }
+
+  .hero__title {
+    font-size: clamp(2.3rem, 5vw, 3.8rem);
+  }
+
+  .portrait-frame {
+    width: min(330px, 90vw);
+  }
+
+}
+/* =========================================================
+   /* <= 992px
+   
+/* ========================================================= */
+
+@media (max-width: 992px) {
+  :root {
+    --header-h: 72px;
+  }
+
+  .container {
+    max-width: 100%;
+    padding-inline: 32px;
+  }
+
+  .site-header {
+    height: 72px;
+    padding-block: 14px;
+    display: flex;
+    flex-shrink: 1;
+  }
+
+  .hero {
+
+    position: relative;
+    height: 100vh;
+  
+    padding-top: 10rem;
+  padding-bottom: 35rem;
+
+  }
+
+  .hero__inner {
+    /* grid-template-columns: 1fr; */
+    text-align: center;
+    gap: 60px;
+      /* display: grid; */
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* .hero__content {
+    order: 2;
+  }
+
+  .hero__portrait {
+    order: 1;
+  }
+
+  .hero__desc {
+    margin-inline: auto;
+  } */
+
+  .hero__actions {
+    justify-content: center;
+  }
+
+  .hero__socials {
+    justify-content: center;
+  }
+
+  .portrait-frame {
+    width: min(340px, 80vw);
+  }
+
+  .scroll-cue {
+    display: none;
+  }
+  .about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.about__bio{
+  text-align: justify;
+  gap: 48px;} 
+
+}
+
+
+
+/* =========================================================
+   <= 768px
+   Tablet / Mobile Navbar
+   ========================================================= */
+
+@media (max-width: 722px) {
+  :root {
+    --header-h: 64px;
+  }
+
+  .container {
+    padding-inline: 18px;
+  }
+
+ .site-header {
+    height: 3.5rem;
+    padding-block: 14px;
+   }
+
+
+
+  /* -----------------------
+      Hamburger Button
+  ----------------------- */
+/* 
+  .nav__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 101;
+  }
+
+  .nav__toggle span {
+    transition:
+      transform 0.35s ease,
+      opacity 0.35s ease;
+  }
+
+  .nav__toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .nav__toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav__toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  } */
+
+  /* -----------------------
+       Mobile Menu
+  ----------------------- */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 5px;
+  width: 100%;
+  min-width: 0;
+}
+  /* .nav__menu { 
+    /* position: fixed;
+    font-size: 0.2rem;
+    backdrop-filter: blur(18px); 
+     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    padding: 30px 10px; 
+
+     overflow-y: auto;
+
+    transform: translateX(100%);
+     opacity: 0; 
+    visibility: hidden; 
+
+    transition:
+      transform 0.35s ease,
+      opacity 0.35s ease,
+      visibility 0.35s ease;
+  }*/
+
+
+.nav__brand{
+  font-size:15px;
+}
+  .nav__menu.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  } 
+
+  .nav__link {
+    width: 100%;
+    /* max-width: 320px; */
+    justify-content: center;
+    padding-top: 5px;
+    font-size: 10px;
+
+  }
+
+  /* .nav__link::after {
+    display: none;
+  } */
+
+
+
+
+.nav-link{
+  font-size: medium;
+}
+  /* -----------------------
+       Hero
+  ----------------------- */
+
+  .hero {
+    height: auto;
+
+    padding-top: calc(var(--header-h) + 30px);
+
+    padding-bottom: 31.5rem;
+  }
+
+  .hero__inner {
+    gap: 40px;
+  }
+
+  .hero__title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .hero__role {
+    font-size: 1rem;
+  }
+
+  .hero__desc {
+    font-size: 0.95rem;
+
+    max-width: 100%;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    max-width: 320px;
+
+    justify-content: center;
+  }
+
+  .hero__socials {
+    justify-content: center;
+  }
+
+  .portrait-frame {
+    width: min(300px, 88vw);
+  }
+}
+
+/* =========================================================
+   <= 576px
+   Mobile
+   ========================================================= */
+
+@media (max-width: 576px) {
+  .nav{
+    display: flex;
+    justify-content: space-between;
+    gap:5px;
+    /* flex-wrap: wrap; */
+  }
+
+  .nav__menu{
+    display: flex;
+    gap:1px;
+
+  }
+.nav__brand{
+  gap:3px;
+}
+
+.hero {
+  padding-top: 40px;
+    padding-bottom: 45rem;
+    display: grid;
+  }
+  .hero__inner{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero__title {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+
+  .hero__role {
+    font-size: 0.95rem;
+  }
+
+  .hero__desc {
+    font-size: 0.92rem;
+  }
+
+    .hero__content{
+      order: 2;
+    }
+    .hero__portrait{
+      order: 1;
+    }
+  .portrait-frame {
+    width: min(270px, 90vw);
+    border-radius: 24px;
+    
+  }
+
+  .portrait-frame img {
+    border-radius: 18px;
+  }
+}
+
+/* =========================================================
+   <= 420px
+   Small Phones
+   ========================================================= */
+
+@media (max-width: 425px) {
+  .container {
+    padding-inline: 15px;
+  }
+
+  .nav__brand{
+    font-size: 1rem;
+    width: 40%;
+    gap:1px;
+  }
+  .nav__brand-text{
+    padding: 0;
+  }
+.nav__menu{
+  gap: 7px;
+}
+  .nav__link{
+    padding:5px;
+    font-size: 0.5rem;
+    
+  }
+  .hero__title {
+    font-size: 1.8rem;
+  }
+
+  .hero__role {
+    font-size: 0.9rem;
+  }
+
+  .hero__desc {
+    font-size: 0.88rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+
+    padding: 12px 18px;
+  }
+
+  .portrait-frame {
+    width: 240px;
+  }
+}
+
+
+@media (max-width: 325px) {
+  .container {
+    padding-inline: 15px;
+  }
+  .site-header{
+    display: flex;
+    height: 5rem;
+    align-items: center;
+    
+
+  }
+.nav{
+  /* justify-content: space-between; */
+  /* gap:1rem; */
+}
+.nav__brand{
+  margin-top: 1px;
+}
+.nav__menu {
+    display: flex;
+    align-items: center;
+    width: 17rem;
+    gap: 6px;
+    flex-wrap: wrap;
+    /* justify-content: flex-start;clear */
+    flex-direction: row;
+    align-content: center;
+    /* justify-content: space-between; */
+}
+    .hero__inner {position: relative;
+        display: grid;
+        grid-template-columns: 1.5fr;
+    }
+
+    .hero__content{
+      padding-bottom: 100rem;
+    }
+}
+/* =========================================================
+   SolangTech Portfolio — responsive.css
+   Part 2 : About + Skills + Projects + Timeline
+   ========================================================= */
+
+/* =========================================================
+   <= 992px
+   ========================================================= */
+
+@media (max-width: 992px) {
+  /* =====================
+      About
+===================== */
+
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .about__bio {
+    text-align: center;
+  }
+
+  .about__bio p {
+    margin-inline: auto;
+  }
+
+  .about__stats {
+    max-width: 650px;
+    margin-inline: auto;
+  }
+
+  /* =====================
+      Skills
+===================== */
+
+  .skills__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .skill-card {
+    padding: 24px 18px;
+  }
+
+  /* =====================
+      Projects
+===================== */
+
+  .projects__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  /* =====================
+      Timeline
+===================== */
+
+  .timeline {
+    max-width: 100%;
+    padding-left: 35px;
+  }
+
+  .timeline__line {
+    left: 10px;
+    transform: none;
+  }
+
+  .timeline__item,
+  .timeline__item--right {
+    width: 100%;
+    margin-left: 0;
+
+    padding: 0 0 40px 40px;
+
+    text-align: left;
+  }
+
+  .timeline__dot {
+    left: 3px;
+    right: auto;
+  }
+
+  .timeline__item--right .timeline__dot {
+    left: 3px;
+  }
+
+  .timeline__card {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   <= 768px
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .section {
+    padding-block: 80px;
+  }
+
+  /* =====================
+      About
+===================== */
+
+  .about__stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .stat-card {
+    text-align: center;
+  }
+
+  .stat-card__value {
+    font-size: 2rem;
+  }
+
+  /* =====================
+      Skills
+===================== */
+
+  .skills__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .skill-card {
+    padding: 22px 16px;
+  }
+
+  .skill-card__icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .skill-card h3 {
+    font-size: 0.92rem;
+  }
+
+  /* =====================
+      Projects
+===================== */
+
+  .projects__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .project-card {
+    max-width: 600px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .project-card__body {
+    padding: 20px;
+  }
+
+  .project-card__links {
+    flex-wrap: wrap;
+  }
+
+  .project-card__links .btn {
+    flex: 1;
+    justify-content: center;
+  }
+
+  /* =====================
+      Timeline
+===================== */
+
+  .timeline {
+    padding-left: 28px;
+  }
+
+  .timeline__line {
+    left: 8px;
+  }
+
+  .timeline__dot {
+    width: 12px;
+    height: 12px;
+
+    left: 2px;
+  }
+
+  .timeline__card {
+    padding: 20px;
+  }
+
+  .timeline__card h3 {
+    font-size: 1rem;
+  }
+}
+
+/* =========================================================
+   <= 576px
+   ========================================================= */
+
+@media (max-width: 576px) {
+  /* =====================
+      About
+===================== */
+
+  .about__stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat-card {
+    padding: 22px;
+  }
+
+  /* =====================
+      Skills
+===================== */
+
+  .skills__grid {
+    grid-template-columns: repeat(1fr,2);
+  }
+
+  .skill-card {
+    max-width: 240px;
+    width: 80%;
+    margin-inline: auto;
+  }
+
+  /* =====================
+      Projects
+===================== */
+
+  .project-card__tags {
+    gap: 6px;
+  }
+
+  .project-card__tags li {
+    font-size: 0.65rem;
+  }
+
+  .project-card__body h3 {
+    font-size: 1.05rem;
+  }
+
+  .project-card__body p {
+    font-size: 0.9rem;
+  }
+
+  /* =====================
+      Timeline
+===================== */
+
+  .timeline {
+    padding-left: 22px;
+  }
+
+  .timeline__item,
+  .timeline__item--right {
+    padding-left: 28px;
+  }
+
+  .timeline__card {
+    padding: 18px;
+  }
+
+  .timeline__date {
+    font-size: 0.7rem;
+  }
+
+  .timeline__card p {
+    font-size: 0.88rem;
+  }
+}
+
+/* =========================================================
+   <= 420px
+   ========================================================= */
+
+@media (max-width: 420px) {
+  .section {
+    padding-block: 70px;
+  }
+
+  .section__title {
+    font-size: 1.8rem;
+  }
+
+  .section__sub {
+    font-size: 0.9rem;
+    margin-bottom: 35px;
+  }
+
+  .stat-card__value {
+    font-size: 1.8rem;
+  }
+
+  .skill-card {
+    padding: 20px 14px;
+  }
+
+  .project-card__body {
+    padding: 18px;
+  }
+
+  .project-card__links {
+    flex-direction: column;
+  }
+
+  .project-card__links .btn {
+    width: 100%;
+  }
+
+  .timeline {
+    padding-left: 18px;
+  }
+
+  .timeline__item {
+    padding-left: 24px;
+  }
+
+  .timeline__card {
+    padding: 16px;
+  }
+} /* =========================================================
+   SolangTech Portfolio — responsive.css
+   Part 3 : Education + Certificates + Contact + Footer
+   + Final Mobile Fixes
+   ========================================================= */
+
+/* =========================================================
+   <= 992px
+   ========================================================= */
+
+@media (max-width: 992px) {
+  /* =====================
+      Education
+===================== */
+
+  .education__grid {
+    max-width: 100%;
+  }
+
+  .edu-card {
+    padding: 24px;
+  }
+
+  /* =====================
+      Certificates
+===================== */
+
+  .certs__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* =====================
+      Contact
+===================== */
+
+  .contact__grid {
+    grid-template-columns: repeat(1f,2);
+    gap: 40px;
+  }
+
+  .contact__info {
+    order: 1;
+  }
+
+  .contact__form {
+    order: 2;
+  }
+
+  /* =====================
+      Footer
+===================== */
+
+  .footer__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer__brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* =========================================================
+   <= 768px
+   ========================================================= */
+
+@media (max-width: 768px) {
+  /* =====================
+      Education
+===================== */
+
+  .edu-card {
+    gap: 16px;
+    padding: 22px;
+  }
+
+  .edu-card__icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .edu-card h3 {
+    font-size: 1rem;
+  }
+
+  .edu-card p {
+    font-size: 0.9rem;
+  }
+
+  /* =====================
+      Certificates
+===================== */
+
+  .certs__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cert-card {
+    max-width: 600px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  /* =====================
+      Contact
+===================== */
+  .contact__grid {
+    grid-template-columns: repeat(1f,2);
+    gap: 40px;
+  }
+
+  .contact__info {
+    order: 1;
+  }
+
+  .contact__form {
+    order: 2;
+  }
+  .contact__form {
+    padding: 24px;
+  }
+
+  .contact__row {
+    font-size: 0.92rem;
+  }
+
+  .form-row input,
+  .form-row textarea {
+    font-size: 0.95rem;
+  }
+
+  /* =====================
+      Footer
+===================== */
+
+  .footer {
+    padding-block: 30px;
+  }
+
+  .footer__copy {
+    text-align: center;
+  }
+}
+
+/* =========================================================
+   <= 576px
+   ========================================================= */
+
+@media (max-width: 576px) {
+  /* =====================
+      Education
+===================== */
+
+  .edu-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .edu-card__icon {
+    margin-bottom: 6px;
+  }
+
+  /* =====================
+      Certificates
+===================== */
+
+  .cert-card {
+    padding: 22px;
+  }
+
+  .cert-card h3 {
+    font-size: 0.95rem;
+  }
+
+  /* =====================
+      Contact
+===================== */
+  .contact__grid {
+    grid-template-columns: repeat(1f,1);
+    gap: 40px;
+  }
+
+  .contact__info {
+    order: 1;
+  }
+
+  .contact__form {
+    order: 2;
+  }
+  .contact__form {
+    padding: 20px;
+  }
+
+  .form-row label {
+    font-size: 0.8rem;
+  }
+
+  .form-row textarea {
+    min-height: 140px;
+  }
+
+  .contact__row {
+    gap: 12px;
+  }
+
+  /* =====================
+      Footer
+===================== */
+
+  .footer__inner {
+    gap: 18px;
+  }
+
+  .back-to-top {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* =========================================================
+   <= 420px
+   ========================================================= */
+
+@media (max-width: 420px) {
+  .edu-card {
+    padding: 18px;
+  }
+
+  .cert-card {
+    padding: 18px;
+  }
+
+  .contact__form {
+    padding: 18px;
+  }
+
+  .contact__row {
+    font-size: 0.88rem;
+  }
+  .contact__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact__info {
+    order: 1;
+  }
+
+  .contact__form {
+    order: 2;
+  }
+  .form-row input,
+  .form-row textarea {
+    padding: 11px 12px;
+  }
+
+  .footer__brand p,
+  .footer__copy {
+    font-size: 0.8rem;
+  }
+
+  .back-to-top {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* =========================================================
+   FINAL RESPONSIVE FIXES
+   ========================================================= */
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+* {
+  max-width: 100%;
+}
+
+img,
+video,
+iframe,
+canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 100%;
+}
+
+.hero__inner,
+.about__grid,
+.contact__grid,
+.footer__inner,
+.projects__grid,
+.skills__grid,
+.certs__grid,
+.education__grid {
+  min-width: 0;
+}
+
+.project-card,
+.skill-card,
+.cert-card,
+.edu-card {
+  min-width: 0;
+}
+
+.btn {
+  white-space: nowrap;
+}
+
+.nav {
+  min-width: 0;
+}
+
+.nav__brand {
+  overflow: hidden;
+}
+
+.nav__brand span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+textarea {
+  max-width: 100%;
+}
+
+input {
+  max-width: 100%;
+}
+
+svg {
+  max-width: 100%;
+}
+
+/* Prevent horizontal scrolling from long text */
+
+h1,
+h2,
+h3,
+p,
+span,
+a {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Smooth scrolling offset */
+
+html {
+  scroll-padding-top: var(--header-h);
+}
+
+.section {
+  scroll-margin-top: var(--header-h);
+}

@@ -368,6 +368,87 @@ const projects = {
 
   video:
     "/project/assets/A-W-T-M-system/Video.mp4"
+},// ---------------------------------------------------------------------
+//! 11. Arduino Obstacle Avoiding Car
+// ---------------------------------------------------------------------
+
+"arduino-obstacle-avoiding-car": {
+  id: "arduino-obstacle-avoiding-car",
+  title: "Arduino Obstacle Avoiding Car",
+
+  shortDescription:
+    "An autonomous Arduino-based robotic car that detects obstacles using an ultrasonic sensor and automatically changes direction.",
+
+  fullDescription:
+    "This project is an autonomous obstacle avoiding robotic car developed using Arduino Uno, an HC-SR04 ultrasonic sensor, an SG90 servo motor, and an L298N motor driver.\n\nThe ultrasonic sensor continuously measures the distance in front of the car. When an obstacle is detected, the car stops and the servo motor scans different directions to determine the available space. The Arduino then compares the measured distances and automatically turns the car toward the clearer direction.\n\nThe complete system was first designed and tested through Proteus simulation to verify the motor control, ultrasonic sensing, servo operation, and obstacle avoidance logic.",
+
+  completionDate: "2026",
+
+  technologies: [
+    "Arduino Uno",
+    "Embedded C",
+    "Ultrasonic Sensor",
+    "Servo Motor",
+    "Motor Driver",
+    "Proteus"
+  ],
+
+  components: [
+    {
+      name: "Arduino Uno",
+      qty: "1",
+      note: "Main microcontroller"
+    },
+    {
+      name: "HC-SR04 Ultrasonic Sensor",
+      qty: "1",
+      note: "Detects obstacles and measures distance"
+    },
+    {
+      name: "SG90 Servo Motor",
+      qty: "1",
+      note: "Rotates the ultrasonic sensor for scanning"
+    },
+    {
+      name: "L298N Motor Driver",
+      qty: "1",
+      note: "Controls the DC motors"
+    },
+    {
+      name: "DC Motors",
+      qty: "4",
+      note: "Drive the robotic car"
+    },
+    {
+      name: "Battery Supply",
+      qty: "1",
+      note: "Provides power to the system"
+    }
+  ],
+
+  features: [
+    "Automatic obstacle detection",
+    "Servo-based environment scanning",
+    "Automatic direction selection",
+    "Four-wheel motor control",
+    "Ultrasonic distance measurement",
+    "L298N-based motor control",
+    "Proteus simulation and testing"
+  ],
+
+  githubLink:
+    "https://github.com/alisolangi1122345-cpu/-Obstacle-Avoiding-Car.git",
+
+  circuitDiagram:
+    "/project/assets/O-A-C/Image.png",
+
+  images: [
+    
+    "/project/assets/O-A-C/Image.png"
+  ],
+
+  // video:
+    // "/project/assets/Obstacle-Avoiding-Car/Video.mp4"
 },
 
 };

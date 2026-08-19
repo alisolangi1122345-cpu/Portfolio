@@ -4,7 +4,12 @@
     "image": "./src/ESP32 Bluetooth car/Diagram.png",
     "alt": "ESP32 Bluetooth-controlled robotic car on a workbench",
     "description": "Four-motor rover driven by an L298N motor driver and controlled over Bluetooth SPP from a phone, with custom PWM speed ramping on ESP32 Arduino Core v3.",
-    "tags": ["ESP32", "L298N", "BluetoothSerial", "C++"],
+    "tags": [
+      "ESP32",
+      "L298N",
+      "BluetoothSerial",
+      "C++"
+    ],
     "modal": "esp32-bluetooth-car",
     "github": "https://github.com/alisolangi1122345-cpu/ESP32-Bluetooth-RC-Car.git"
   },
@@ -13,7 +18,12 @@
     "image": "./src/Home-Automation Sytstem/Image.png",
     "alt": "Home Automation System",
     "description": "An IoT-powered home automation system developed with ESP32 and a 2-channel relay module, demonstrating wireless appliance control, embedded systems programming, and practical automation techniques.",
-    "tags": ["ESP32", "Relay", "BluetoothSerial", "C++"],
+    "tags": [
+      "ESP32",
+      "Relay",
+      "BluetoothSerial",
+      "C++"
+    ],
     "modal": "home-automation-system",
     "github": "https://github.com/alisolangi1122345-cpu/ESP32-Home-Automation-System.git"
   },
@@ -22,7 +32,13 @@
     "image": "./src/RFID attendence  system/Image.png",
     "alt": "RFID Module",
     "description": "A smart attendance and access control system built with Arduino Uno and the MFRC522 RFID reader. The system authenticates RFID cards, controls door access using an SG90 servo motor, and provides instant visual and audio feedback through LEDs and a buzzer.",
-    "tags": ["RFID Module", "Arduino", "Servo", "IoT", "C++"],
+    "tags": [
+      "RFID Module",
+      "Arduino",
+      "Servo",
+      "IoT",
+      "C++"
+    ],
     "modal": "rfid-attendance-system",
     "github": "https://github.com/alisolangi1122345-cpu/RFID-Attendance-System.git"
   },
@@ -31,7 +47,13 @@
     "image": "./src/Smoke + fire system/Image.png",
     "alt": "Smoke & Flame Detection System",
     "description": "A safety-focused embedded system built with Arduino Uno that continuously monitors smoke concentration and flame presence in real time using sensors, LEDs, buzzer and LCD display.",
-    "tags": ["Arduino", "Smoke Sensor", "Flame Sensor", "IoT", "C++"],
+    "tags": [
+      "Arduino",
+      "Smoke Sensor",
+      "Flame Sensor",
+      "IoT",
+      "C++"
+    ],
     "modal": "smoke-fire-detection",
     "github": "https://github.com/alisolangi1122345-cpu/Arduino-Smoke-and-Flame-Detection-System.git"
   },
@@ -40,7 +62,10 @@
     "image": "./src/STM32/3D.png",
     "alt": "STM32 Development Board",
     "description": "A custom-designed STM32-based development board created for embedded systems development, prototyping and firmware programming.",
-    "tags": ["KiCad", "PCB Design"],
+    "tags": [
+      "KiCad",
+      "PCB Design"
+    ],
     "modal": "stm32",
     "github": "https://github.com/alisolangi1122345-cpu/STM32-Development-Board-PCB.git"
   },
@@ -49,7 +74,11 @@
     "image": "./src/Daul-output-supply/3D.png",
     "alt": "Dual Output Regulated Power Supply",
     "description": "7805/7812-based bench supply simulated end-to-end in Proteus, delivering clean 5V and 12V rails with short-circuit protection.",
-    "tags": ["Proteus", "7805/7812", "Analog"],
+    "tags": [
+      "Proteus",
+      "7805/7812",
+      "Analog"
+    ],
     "modal": "dual-output-supply",
     "github": "https://github.com/alisolangi1122345-cpu/Dual-Output-AC-to-DC-Power-Supply.git"
   },
@@ -58,7 +87,11 @@
     "image": "./src/Digital bench press suplly/3D.png",
     "alt": "Digital Bench Power Supply",
     "description": "Constant-voltage / constant-current supply built around an LM338T pass transistor with LM358 and LM741 op-amps for current sensing.",
-    "tags": ["LM338T", "LM358", "LM741"],
+    "tags": [
+      "LM338T",
+      "LM358",
+      "LM741"
+    ],
     "modal": "digital-bench-power-supply",
     "github": "https://github.com/alisolangi1122345-cpu/Digital-Bench-Power-Supply.git"
   },
@@ -67,7 +100,10 @@
     "image": "./src/Buck converter/3D image.jpeg",
     "alt": "Buck Converter",
     "description": "Buck converter tuned and corrected for a stable 5V/3A output, verified against ripple and load-transient specifications.",
-    "tags": ["LM2575", "Power Electronics"],
+    "tags": [
+      "LM2575",
+      "Power Electronics"
+    ],
     "modal": "buck-converter",
     "github": "https://github.com/alisolangi1122345-cpu/LM2575-Buck-Converter.git"
   },
@@ -76,33 +112,27 @@
     "image": "./src/Led Chaser/3D.png",
     "alt": "LED Chaser PCB",
     "description": "A custom-designed LED Chaser Circuit featuring smooth sequential lighting effects, demonstrating digital timing, LED control and practical PCB design.",
-    "tags": ["PCB"],
+    "tags": [
+      "PCB"
+    ],
     "modal": "led-chaser",
     "github": "https://github.com/alisolangi1122345-cpu/LED-Chaser-PCB.git"
   },
-  {
-    "title": "Arduino Water Tank Monitoring & Automatic Pump Control",
-    "image": "./src/A-W-T-M-system/image.png",
-    "alt": "Arduino-based Water Tank Monitoring and Automatic Pump Control System",
-    "description": "An Arduino Uno-based smart water tank monitoring and automatic pump control system using an ultrasonic sensor and a relay module. The system measures the water level in real time, displays the tank percentage on a 16×2 LCD, and automatically turns the water pump ON or OFF based on predefined water level thresholds.",
-    "tags": [
-      "Arduino Uno",
-      "HC-SR04",
-      "Relay Module",
-      "16x2 LCD",
-      "Embedded C"
-    ],
-    "modal": "water-tank-monitoring-system",
-    "github": "https://github.com/alisolangi1122345-cpu/-Automatic-Water-Tank-Level-Controller.git"
-  },
+
 
   {
-    "title": "Arduino Obstacle Avoiding Car",
-    "image": "./src/O-A-C/Image.png",
-    "alt": "Arduino-based obstacle avoiding robotic car simulated in Proteus",
-    "description": "Autonomous four-wheel robotic car that uses an HC-SR04 ultrasonic sensor mounted on an SG90 servo to scan the surroundings, while an Arduino UNO controls the motors through an L298N driver and automatically chooses a clear direction when an obstacle is detected.",
-    "tags": ["Arduino UNO", "HC-SR04", "SG90 Servo", "L298N", "Proteus", "C++"],
-    "modal": "arduino-obstacle-avoiding-car",
-    "github": "https://github.com/alisolangi1122345-cpu/-Obstacle-Avoiding-Car.git"
-  }
+  "title": "Arduino Water Tank Monitoring & Automatic Pump Control",
+  "image": "./src/A-W-T-M-system/image.png",
+  "alt": "Arduino-based Water Tank Monitoring and Automatic Pump Control System",
+  "description": "An Arduino Uno-based smart water tank monitoring and automatic pump control system using an ultrasonic sensor and a relay module. The system measures the water level in real time, displays the tank percentage on a 16×2 LCD, and automatically turns the water pump ON or OFF based on predefined water level thresholds.",
+  "tags": [
+    "Arduino Uno",
+    "HC-SR04",
+    "Relay Module",
+    "16x2 LCD",
+    "Embedded C"
+  ],
+  "modal": "water-tank-monitoring-system",
+  "github": "https://github.com/alisolangi1122345-cpu/-Automatic-Water-Tank-Level-Controller.git"
+}
 ]
