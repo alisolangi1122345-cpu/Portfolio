@@ -1,7 +1,4 @@
-
-
 const projects = {
-
   // ---------------------------------------------------------------------
   //! 1. Buck Converter
   // ---------------------------------------------------------------------
@@ -18,20 +15,25 @@ const projects = {
       { name: "Inductor", qty: "1", note: "Main energy-storage element" }, // TODO: add exact value/part number
       { name: "Switching MOSFET", qty: "1", note: "Main switching element" }, // TODO: part number
       { name: "Output Capacitors", qty: "—", note: "Output ripple filtering" }, // TODO: values
-      { name: "Feedback/Control IC", qty: "1", note: "Regulates output voltage" } // TODO: exact IC used
+      {
+        name: "Feedback/Control IC",
+        qty: "1",
+        note: "Regulates output voltage",
+      }, // TODO: exact IC used
     ],
     features: [
       "Regulated DC output from a higher input voltage",
       "Compact two-layer PCB layout",
-      "Designed and verified in schematic + 3D before fabrication"
+      "Designed and verified in schematic + 3D before fabrication",
     ], // TODO: replace with your actual measured specs (input/output V, max current, efficiency)
-    githubLink: "https://github.com/alisolangi1122345-cpu/LM2575-Buck-Converter.git", // TODO: add your repo URL, or set to "" to hide the button
+    githubLink:
+      "https://github.com/alisolangi1122345-cpu/LM2575-Buck-Converter.git", // TODO: add your repo URL, or set to "" to hide the button
     circuitDiagram: "/project/assets/Buck converter/Schematic.jpeg",
     images: [
       "/project/assets/Buck converter/3D image.jpeg",
       "/project/assets/Buck converter/PCB-LAyout.png",
     ],
-    video: ""
+    video: "",
   },
 
   // ---------------------------------------------------------------------
@@ -47,23 +49,32 @@ const projects = {
     completionDate: "2026", // TODO: replace with exact date
     technologies: ["PCB Design", "Linear Regulation", "KiCad"], // TODO: confirm
     components: [
-      { name: "Voltage Regulator (Rail 1)", qty: "1", note: "First output regulation" }, // TODO: part number
-      { name: "Voltage Regulator (Rail 2)", qty: "1", note: "Second output regulation" }, // TODO: part number
+      {
+        name: "Voltage Regulator (Rail 1)",
+        qty: "1",
+        note: "First output regulation",
+      }, // TODO: part number
+      {
+        name: "Voltage Regulator (Rail 2)",
+        qty: "1",
+        note: "Second output regulation",
+      }, // TODO: part number
       { name: "Filter Capacitors", qty: "—", note: "Input/output smoothing" }, // TODO: values
-      { name: "Rectifier / Bridge", qty: "1", note: "If AC input is used" } // TODO: confirm/remove
+      { name: "Rectifier / Bridge", qty: "1", note: "If AC input is used" }, // TODO: confirm/remove
     ],
     features: [
       "Two independently regulated output rails",
       "Filtered, low-ripple outputs",
-      "Compact single PCB for both supplies"
+      "Compact single PCB for both supplies",
     ], // TODO: replace with your actual output voltages/currents
-    githubLink: "https://github.com/alisolangi1122345-cpu/Dual-Output-AC-to-DC-Power-Supply.git", // TODO: add your repo URL
+    githubLink:
+      "https://github.com/alisolangi1122345-cpu/Dual-Output-AC-to-DC-Power-Supply.git", // TODO: add your repo URL
     circuitDiagram: "/project/assets/Daul-output-supply/Schematic.png",
     images: [
       "/project/assets/Daul-output-supply/3D.png",
       "/project/assets/Daul-output-supply/PCB layout.png",
     ],
-    video: ""
+    video: "",
   },
 
   // ---------------------------------------------------------------------
@@ -79,23 +90,40 @@ const projects = {
     completionDate: "2026", // TODO: replace with exact date
     technologies: ["Analog Design", "Embedded C", "ADC Sampling", "PCB Design"], // TODO: confirm
     components: [
-      { name: "Power Regulation Stage", qty: "1", note: "Main voltage regulation" }, // TODO: exact regulator/topology
-      { name: "Microcontroller", qty: "1", note: "Reads sensors, drives display" }, // TODO: exact MCU
-      { name: "Digital Display", qty: "1", note: "Live voltage/current readout" }, // TODO: display type (OLED/LCD/7-seg)
-      { name: "Current Sense Resistor/IC", qty: "1", note: "Feeds ADC for current readout" } // TODO: confirm
+      {
+        name: "Power Regulation Stage",
+        qty: "1",
+        note: "Main voltage regulation",
+      }, // TODO: exact regulator/topology
+      {
+        name: "Microcontroller",
+        qty: "1",
+        note: "Reads sensors, drives display",
+      }, // TODO: exact MCU
+      {
+        name: "Digital Display",
+        qty: "1",
+        note: "Live voltage/current readout",
+      }, // TODO: display type (OLED/LCD/7-seg)
+      {
+        name: "Current Sense Resistor/IC",
+        qty: "1",
+        note: "Feeds ADC for current readout",
+      }, // TODO: confirm
     ],
     features: [
       "Live digital voltage and current readout",
       "Adjustable regulated output",
-      "Custom PCB combining power stage and monitoring electronics"
+      "Custom PCB combining power stage and monitoring electronics",
     ], // TODO: replace with your actual voltage/current range
-    githubLink: "https://github.com/alisolangi1122345-cpu/Digital-Bench-Power-Supply.git", // TODO: add your repo URL
+    githubLink:
+      "https://github.com/alisolangi1122345-cpu/Digital-Bench-Power-Supply.git", // TODO: add your repo URL
     circuitDiagram: "/project/assets/Digital bench press suplly/Schematic.png",
     images: [
       "/project/assets/Digital bench press suplly/3D.png",
-      "/project/assets/Digital bench press suplly/Pcb layout.png"
+      "/project/assets/Digital bench press suplly/Pcb layout.png",
     ],
-    video: ""
+    video: "",
   },
 
   // ---------------------------------------------------------------------
@@ -109,28 +137,40 @@ const projects = {
     fullDescription:
       "This build is a small wheeled robot controlled wirelessly over Bluetooth using an ESP32's built-in radio. Motion commands are sent from a phone app and translated by the ESP32 into PWM signals for a motor driver stage, which drives the car's DC motors forward, backward, and through turns.\n\nThe finished chassis carries the ESP32, motor driver, motors, and battery pack, and was tested and driven as shown in the demo video.",
     completionDate: "2026", // TODO: replace with exact date
-    technologies: ["ESP32", "Bluetooth (BLE/Classic)", "Embedded C", "PWM Motor Control"], // TODO: confirm which Bluetooth stack used
+    technologies: [
+      "ESP32",
+      "Bluetooth (BLE/Classic)",
+      "Embedded C",
+      "PWM Motor Control",
+    ], // TODO: confirm which Bluetooth stack used
     components: [
-      { name: "ESP32 Dev Board", qty: "1", note: "Main controller + Bluetooth" },
-      { name: "Motor Driver (e.g. L298N/TB6612)", qty: "1", note: "Drives the DC motors" }, // TODO: confirm exact driver IC
+      {
+        name: "ESP32 Dev Board",
+        qty: "1",
+        note: "Main controller + Bluetooth",
+      },
+      {
+        name: "Motor Driver (e.g. L298N/TB6612)",
+        qty: "1",
+        note: "Drives the DC motors",
+      }, // TODO: confirm exact driver IC
       { name: "DC Gear Motors", qty: "2", note: "Drive wheels" }, // TODO: confirm quantity/specs
       { name: "Battery Pack", qty: "1", note: "Powers motors + electronics" },
-      { name: "Chassis + Wheels", qty: "1", note: "Robot car body" }
+      { name: "Chassis + Wheels", qty: "1", note: "Robot car body" },
     ],
     features: [
       "Wireless Bluetooth control from a phone",
       "Forward / reverse / turning motion control",
       "Onboard battery power, fully untethered driving",
-      "Demonstrated working in the video below"
+      "Demonstrated working in the video below",
     ],
-    githubLink: "https://github.com/alisolangi1122345-cpu/ESP32-Bluetooth-RC-Car.git", // TODO: add your repo URL
+    githubLink:
+      "https://github.com/alisolangi1122345-cpu/ESP32-Bluetooth-RC-Car.git", // TODO: add your repo URL
     circuitDiagram: "/project/assets/ESP32 Bluetooth car/Diagram.png",
 
-    images: [
-      "/project/assets/ESP32 Bluetooth car/Images-final-build.jpg"
-    ],
+    images: ["/project/assets/ESP32 Bluetooth car/Images-final-build.jpg"],
 
-    video: "/project/assets/ESP32 Bluetooth car/Video.mp4"
+    video: "/project/assets/ESP32 Bluetooth car/Video.mp4",
   },
 
   // ---------------------------------------------------------------------
@@ -146,21 +186,32 @@ const projects = {
     completionDate: "2026", // TODO: replace with exact date
     technologies: ["Embedded C", "Wi-Fi / IoT", "Relay Control"], // TODO: confirm exact wireless method (Wi-Fi/Bluetooth/app used)
     components: [
-      { name: "Microcontroller (Wi-Fi capable)", qty: "1", note: "Main controller" }, // TODO: confirm exact board (ESP8266/ESP32/etc.)
-      { name: "Relay Module", qty: "1", note: "Switches mains-powered appliances" }, // TODO: confirm channel count
-      { name: "Power Supply Module", qty: "1", note: "Powers the control electronics" }
+      {
+        name: "Microcontroller (Wi-Fi capable)",
+        qty: "1",
+        note: "Main controller",
+      }, // TODO: confirm exact board (ESP8266/ESP32/etc.)
+      {
+        name: "Relay Module",
+        qty: "1",
+        note: "Switches mains-powered appliances",
+      }, // TODO: confirm channel count
+      {
+        name: "Power Supply Module",
+        qty: "1",
+        note: "Powers the control electronics",
+      },
     ],
     features: [
       "Remote on/off control of connected appliances",
       "Relay-isolated switching for safety",
-      "Demonstrated working in the video below"
+      "Demonstrated working in the video below",
     ], // TODO: add details like app used, number of channels, voice control if applicable
-    githubLink: "https://github.com/alisolangi1122345-cpu/ESP32-Home-Automation-System.git", // TODO: add your repo URL
+    githubLink:
+      "https://github.com/alisolangi1122345-cpu/ESP32-Home-Automation-System.git", // TODO: add your repo URL
     circuitDiagram: "",
-    images: [
-      "/project/assets/Home-Automation Sytstem/Image.png"
-    ],
-    video: "/project/assets/Home-Automation Sytstem/video.mp4"
+    images: ["/project/assets/Home-Automation Sytstem/Image.png"],
+    video: "/project/assets/Home-Automation Sytstem/video.mp4",
   },
 
   // ---------------------------------------------------------------------
@@ -176,23 +227,28 @@ const projects = {
     completionDate: "2026", // TODO: replace with exact date
     technologies: ["Digital Logic", "PCB Design"], // TODO: confirm — e.g. 555 timer + counter IC, or microcontroller-driven
     components: [
-      { name: "Sequencing IC / Microcontroller", qty: "1", note: "Drives LED sequence" }, // TODO: confirm exact IC (e.g. CD4017, 555 timer, or MCU)
+      {
+        name: "Sequencing IC / Microcontroller",
+        qty: "1",
+        note: "Drives LED sequence",
+      }, // TODO: confirm exact IC (e.g. CD4017, 555 timer, or MCU)
       { name: "LEDs", qty: "—", note: "Chaser output" }, // TODO: exact count
-      { name: "Current-Limiting Resistors", qty: "—", note: "One per LED" }
+      { name: "Current-Limiting Resistors", qty: "—", note: "One per LED" },
     ],
     features: [
       "Sequential scanning LED light effect",
       "Custom-designed PCB",
-      "Adjustable chase speed" // TODO: confirm if speed is actually adjustable, or remove
+      "Adjustable chase speed", // TODO: confirm if speed is actually adjustable, or remove
     ],
-    githubLink: "A custom-designed LED Chaser Circuit featuring smooth sequential lighting effects. Built to demonstrate digital timing, LED control, and practical PCB design through simulation and hardware implementation.", // TODO: add your repo URL
+    githubLink:
+      "A custom-designed LED Chaser Circuit featuring smooth sequential lighting effects. Built to demonstrate digital timing, LED control, and practical PCB design through simulation and hardware implementation.", // TODO: add your repo URL
     circuitDiagram: "/project/assets/Led Chaser/Schematic.png",
     images: [
       "/project/assets/Led Chaser/3D.png",
       "/project/assets/Led Chaser/PCB layout.png",
-      "/project/assets/Led Chaser/Schematic.png"
+      "/project/assets/Led Chaser/Schematic.png",
     ],
-    video: "/project/assets/Led Chaser/Demo.mp4"
+    video: "/project/assets/Led Chaser/Demo.mp4",
   },
 
   // ---------------------------------------------------------------------
@@ -208,21 +264,24 @@ const projects = {
     completionDate: "2025", // TODO: replace with exact date
     technologies: ["Embedded C", "SPI", "RFID (RC522 or similar)"], // TODO: confirm exact RFID module used
     components: [
-      { name: "Microcontroller", qty: "1", note: "Reads RFID data, logs attendance" }, // TODO: confirm exact board
+      {
+        name: "Microcontroller",
+        qty: "1",
+        note: "Reads RFID data, logs attendance",
+      }, // TODO: confirm exact board
       { name: "RFID Reader Module", qty: "1", note: "Scans card/tag UID" }, // TODO: confirm exact module (e.g. RC522)
-      { name: "Display / Indicator", qty: "1", note: "Shows scan status" } // TODO: confirm if an LCD/OLED/LED is used
+      { name: "Display / Indicator", qty: "1", note: "Shows scan status" }, // TODO: confirm if an LCD/OLED/LED is used
     ],
     features: [
       "Automatic attendance logging on card scan",
       "Fast, contactless identification",
-      "Demonstrated working in the video below"
+      "Demonstrated working in the video below",
     ], // TODO: add details on where/how attendance is stored (SD card, server, app, etc.)
-    githubLink: "https://github.com/alisolangi1122345-cpu/RFID-Attendance-System.git", // TODO: add your repo URL
+    githubLink:
+      "https://github.com/alisolangi1122345-cpu/RFID-Attendance-System.git", // TODO: add your repo URL
     circuitDiagram: "/project/assets/RFID attendence  system/Image.png",
-    images: [
-      "/project/assets/RFID attendence  system/Image.png"
-    ],
-    video: "/project/assets/RFID attendence  system/Video.mp4"
+    images: ["/project/assets/RFID attendence  system/Image.png"],
+    video: "/project/assets/RFID attendence  system/Video.mp4",
   },
 
   // ---------------------------------------------------------------------
@@ -238,30 +297,40 @@ const projects = {
     completionDate: "2026", // TODO: replace with exact date
     technologies: ["Embedded C", "Sensor Interfacing", "Proteus Simulation"], // TODO: confirm exact sensors used
     components: [
-      { name: "Smoke Sensor (e.g. MQ-2)", qty: "1", note: "Detects smoke/gas presence" }, // TODO: confirm exact sensor
+      {
+        name: "Smoke Sensor (e.g. MQ-2)",
+        qty: "1",
+        note: "Detects smoke/gas presence",
+      }, // TODO: confirm exact sensor
       { name: "Flame Sensor", qty: "1", note: "Detects flame/IR signature" }, // TODO: confirm if used
-      { name: "Microcontroller", qty: "1", note: "Reads sensors, triggers alarm" }, // TODO: confirm exact board
-      { name: "Buzzer / Alarm Output", qty: "1", note: "Audible alert on detection" }
+      {
+        name: "Microcontroller",
+        qty: "1",
+        note: "Reads sensors, triggers alarm",
+      }, // TODO: confirm exact board
+      {
+        name: "Buzzer / Alarm Output",
+        qty: "1",
+        note: "Audible alert on detection",
+      },
     ],
     features: [
       "Detects smoke and/or flame conditions",
       "Audible alarm on detection",
-      "Validated first in Proteus simulation, then on real hardware"
+      "Validated first in Proteus simulation, then on real hardware",
     ],
     githubLink: "#", // TODO: add your repo URL
     circuitDiagram: "/project/assets/Smoke + fire system/Image.png",
-    images: [
-      "/project/assets/Smoke + fire system/Image.png"
-    ],
+    images: ["/project/assets/Smoke + fire system/Image.png"],
 
     // video: "/project/assets/Smoke + fire system/Proteus simulation.mp4",
-    video: "/project/assets/Smoke + fire system/Video.mp4"
+    video: "/project/assets/Smoke + fire system/Video.mp4",
   },
 
   // ---------------------------------------------------------------------
   //! 9. STM32 Project
   // ---------------------------------------------------------------------
-  "stm32": {
+  stm32: {
     id: "stm32",
     title: "STM32-Based Project",
     shortDescription:
@@ -269,188 +338,279 @@ const projects = {
     fullDescription:
       "This board is built around an STM32 microcontroller as its main processing element. The full design flow — schematic capture, PCB routing, and a 3D render for mechanical/enclosure checks — was completed before fabrication.\n\nNOTE: Please replace this description with what the board actually does (e.g. motor control, data acquisition, a specific interface project) — the uploaded files show the schematic/PCB/3D render but not the firmware or end application.",
     completionDate: "2026",
-    technologies: ["STM32", "Embedded C", "PCB Design"], 
+    technologies: ["STM32", "Embedded C", "PCB Design"],
     components: [
       { name: "STM32 Microcontroller", qty: "1", note: "Main processor" }, // TODO: confirm exact part (e.g. STM32F103C8T6)
-      { name: "Supporting Passives", qty: "—", note: "Decoupling, pull-ups, etc." },
-      { name: "Connectors/Headers", qty: "—", note: "Programming and I/O access" }
+      {
+        name: "Supporting Passives",
+        qty: "—",
+        note: "Decoupling, pull-ups, etc.",
+      },
+      {
+        name: "Connectors/Headers",
+        qty: "—",
+        note: "Programming and I/O access",
+      },
     ],
     features: [
       "Custom STM32-based PCB",
-      "Full design flow: schematic → PCB → 3D render → fabrication"
+      "Full design flow: schematic → PCB → 3D render → fabrication",
     ],
-    githubLink: "https://github.com/alisolangi1122345-cpu/STM32-Development-Board-PCB.git", // TODO: add your repo URL  
+    githubLink:
+      "https://github.com/alisolangi1122345-cpu/STM32-Development-Board-PCB.git", // TODO: add your repo URL
     circuitDiagram: "/project/assets/STM32/schematic.png",
     images: [
-
       "/project/assets/STM32/3D.png",
       "/project/assets/STM32/PCB layout.png",
     ],
-    video: ""
+    video: "",
   },
-
-
 
   // ---------------------------------------------------------------------
   //! 10. Water Tank Monitoring System
-  // ---------------------------------------------------------------------  
-  
+  // ---------------------------------------------------------------------
+
   "water-tank-monitoring-system": {
-  id: "water-tank-level-controller",
-  title: "Automatic Water Tank Level Controller",
-  shortDescription:
-    "An Arduino-based automatic water tank controller that monitors water level using an ultrasonic sensor and automatically switches the water pump ON/OFF.",
+    id: "water-tank-level-controller",
+    title: "Automatic Water Tank Level Controller",
+    shortDescription:
+      "An Arduino-based automatic water tank controller that monitors water level using an ultrasonic sensor and automatically switches the water pump ON/OFF.",
 
-  fullDescription:
-    "This project is an automatic water tank level controller developed using Arduino Uno. The system continuously measures the water level with an HC-SR04 ultrasonic sensor and automatically controls a water pump through a relay module.\n\nA 16×2 LCD provides real-time information about the tank level and pump status, allowing users to monitor the system easily. The controller helps prevent water overflow, protects the pump from dry running, and eliminates the need for manual pump operation. The project was first validated through simulation and then implemented successfully on real hardware.",
+    fullDescription:
+      "This project is an automatic water tank level controller developed using Arduino Uno. The system continuously measures the water level with an HC-SR04 ultrasonic sensor and automatically controls a water pump through a relay module.\n\nA 16×2 LCD provides real-time information about the tank level and pump status, allowing users to monitor the system easily. The controller helps prevent water overflow, protects the pump from dry running, and eliminates the need for manual pump operation. The project was first validated through simulation and then implemented successfully on real hardware.",
 
-  completionDate: "2026",
+    completionDate: "2026",
 
-  technologies: [
-    "Arduino Uno",
-    "Embedded C",
-    "Ultrasonic Sensor",
-    "Relay Control"
-  ],
+    technologies: [
+      "Arduino Uno",
+      "Embedded C",
+      "Ultrasonic Sensor",
+      "Relay Control",
+    ],
 
-  components: [
-    {
-      name: "Arduino Uno",
-      qty: "1",
-      note: "Main microcontroller"
-    },
-    {
-      name: "HC-SR04 Ultrasonic Sensor",
-      qty: "1",
-      note: "Measures water level"
-    },
-    {
-      name: "1-Channel Relay Module",
-      qty: "1",
-      note: "Controls the water pump"
-    },
-    {
-      name: "16×2 LCD Display",
-      qty: "1",
-      note: "Displays water level and pump status"
-    },
-    {
-      name: "12V DC Water Pump",
-      qty: "1",
-      note: "Fills the water tank automatically"
-    },
-    {
-      name: "Power Supply",
-      qty: "1",
-      note: "Powers the system"
-    }
-  ],
+    components: [
+      {
+        name: "Arduino Uno",
+        qty: "1",
+        note: "Main microcontroller",
+      },
+      {
+        name: "HC-SR04 Ultrasonic Sensor",
+        qty: "1",
+        note: "Measures water level",
+      },
+      {
+        name: "1-Channel Relay Module",
+        qty: "1",
+        note: "Controls the water pump",
+      },
+      {
+        name: "16×2 LCD Display",
+        qty: "1",
+        note: "Displays water level and pump status",
+      },
+      {
+        name: "12V DC Water Pump",
+        qty: "1",
+        note: "Fills the water tank automatically",
+      },
+      {
+        name: "Power Supply",
+        qty: "1",
+        note: "Powers the system",
+      },
+    ],
 
-  features: [
-    "Automatic pump ON/OFF control",
-    "Real-time water level monitoring",
-    "LCD status display",
-    "Prevents tank overflow",
-    "Protects pump from dry running",
-    "Fully tested on physical hardware"
-  ],
+    features: [
+      "Automatic pump ON/OFF control",
+      "Real-time water level monitoring",
+      "LCD status display",
+      "Prevents tank overflow",
+      "Protects pump from dry running",
+      "Fully tested on physical hardware",
+    ],
 
-  githubLink:
-  "https://github.com/alisolangi1122345-cpu/-Automatic-Water-Tank-Level-Controller.git",
+    githubLink:
+      "https://github.com/alisolangi1122345-cpu/-Automatic-Water-Tank-Level-Controller.git",
 
-  circuitDiagram:
-    "/project/assets/A-W-T-M-system/image.png",
+    circuitDiagram: "/project/assets/A-W-T-M-system/image.png",
 
-  images: [
-    
-    "/project/assets/A-W-T-M-system/image.png"
-  ],
+    images: ["/project/assets/A-W-T-M-system/image.png"],
 
-  video:
-    "/project/assets/A-W-T-M-system/Video.mp4"
-},// ---------------------------------------------------------------------
-//! 11. Arduino Obstacle Avoiding Car
-// ---------------------------------------------------------------------
+    video: "/project/assets/A-W-T-M-system/Video.mp4",
+  }, // ---------------------------------------------------------------------
+  //! 11. Arduino Obstacle Avoiding Car
+  // ---------------------------------------------------------------------
 
-"arduino-obstacle-avoiding-car": {
-  id: "arduino-obstacle-avoiding-car",
-  title: "Arduino Obstacle Avoiding Car",
+  "arduino-obstacle-avoiding-car": {
+    id: "arduino-obstacle-avoiding-car",
+    title: "Arduino Obstacle Avoiding Car",
 
-  shortDescription:
-    "An autonomous Arduino-based robotic car that detects obstacles using an ultrasonic sensor and automatically changes direction.",
+    shortDescription:
+      "An autonomous Arduino-based robotic car that detects obstacles using an ultrasonic sensor and automatically changes direction.",
 
-  fullDescription:
-    "This project is an autonomous obstacle avoiding robotic car developed using Arduino Uno, an HC-SR04 ultrasonic sensor, an SG90 servo motor, and an L298N motor driver.\n\nThe ultrasonic sensor continuously measures the distance in front of the car. When an obstacle is detected, the car stops and the servo motor scans different directions to determine the available space. The Arduino then compares the measured distances and automatically turns the car toward the clearer direction.\n\nThe complete system was first designed and tested through Proteus simulation to verify the motor control, ultrasonic sensing, servo operation, and obstacle avoidance logic.",
+    fullDescription:
+      "This project is an autonomous obstacle avoiding robotic car developed using Arduino Uno, an HC-SR04 ultrasonic sensor, an SG90 servo motor, and an L298N motor driver.\n\nThe ultrasonic sensor continuously measures the distance in front of the car. When an obstacle is detected, the car stops and the servo motor scans different directions to determine the available space. The Arduino then compares the measured distances and automatically turns the car toward the clearer direction.\n\nThe complete system was first designed and tested through Proteus simulation to verify the motor control, ultrasonic sensing, servo operation, and obstacle avoidance logic.",
 
-  completionDate: "2026",
+    completionDate: "2026",
 
-  technologies: [
-    "Arduino Uno",
-    "Embedded C",
-    "Ultrasonic Sensor",
-    "Servo Motor",
-    "Motor Driver",
-    "Proteus"
-  ],
+    technologies: [
+      "Arduino Uno",
+      "Embedded C",
+      "Ultrasonic Sensor",
+      "Servo Motor",
+      "Motor Driver",
+      "Proteus",
+    ],
 
-  components: [
-    {
-      name: "Arduino Uno",
-      qty: "1",
-      note: "Main microcontroller"
-    },
-    {
-      name: "HC-SR04 Ultrasonic Sensor",
-      qty: "1",
-      note: "Detects obstacles and measures distance"
-    },
-    {
-      name: "SG90 Servo Motor",
-      qty: "1",
-      note: "Rotates the ultrasonic sensor for scanning"
-    },
-    {
-      name: "L298N Motor Driver",
-      qty: "1",
-      note: "Controls the DC motors"
-    },
-    {
-      name: "DC Motors",
-      qty: "4",
-      note: "Drive the robotic car"
-    },
-    {
-      name: "Battery Supply",
-      qty: "1",
-      note: "Provides power to the system"
-    }
-  ],
+    components: [
+      {
+        name: "Arduino Uno",
+        qty: "1",
+        note: "Main microcontroller",
+      },
+      {
+        name: "HC-SR04 Ultrasonic Sensor",
+        qty: "1",
+        note: "Detects obstacles and measures distance",
+      },
+      {
+        name: "SG90 Servo Motor",
+        qty: "1",
+        note: "Rotates the ultrasonic sensor for scanning",
+      },
+      {
+        name: "L298N Motor Driver",
+        qty: "1",
+        note: "Controls the DC motors",
+      },
+      {
+        name: "DC Motors",
+        qty: "4",
+        note: "Drive the robotic car",
+      },
+      {
+        name: "Battery Supply",
+        qty: "1",
+        note: "Provides power to the system",
+      },
+    ],
 
-  features: [
-    "Automatic obstacle detection",
-    "Servo-based environment scanning",
-    "Automatic direction selection",
-    "Four-wheel motor control",
-    "Ultrasonic distance measurement",
-    "L298N-based motor control",
-    "Proteus simulation and testing"
-  ],
+    features: [
+      "Automatic obstacle detection",
+      "Servo-based environment scanning",
+      "Automatic direction selection",
+      "Four-wheel motor control",
+      "Ultrasonic distance measurement",
+      "L298N-based motor control",
+      "Proteus simulation and testing",
+    ],
 
-  githubLink:
-    "https://github.com/alisolangi1122345-cpu/-Obstacle-Avoiding-Car.git",
+    githubLink:
+      "https://github.com/alisolangi1122345-cpu/-Obstacle-Avoiding-Car.git",
 
-  circuitDiagram:
-    "/project/assets/O-A-C/Image.png",
+    circuitDiagram: "/project/assets/O-A-C/Image.png",
 
-  images: [
-    
-    "/project/assets/O-A-C/Image.png"
-  ],
+    images: ["/project/assets/O-A-C/Image.png"],
 
-  // video:
+    // video:
     // "/project/assets/Obstacle-Avoiding-Car/Video.mp4"
-},
+  },
+  // ---------------------------------------------------------------------
+  // 12. Environmental Sensor Board Project
+  // ---------------------------------------------------------------------
+  "environmental-sensor-board": {
+    id: "environmental-sensor-board",
 
+    title: "Environmental Sensor Board",
+
+    shortDescription:
+      "A custom ESP32-S3 based environmental sensing PCB integrating temperature, pressure, and ambient light sensors with USB-C power and regulated 3.3V supply.",
+
+    fullDescription:
+      "This custom Environmental Sensor Board is built around an ESP32-S3 microcontroller and is designed for environmental data acquisition. The board integrates a BMP280 sensor for temperature and barometric pressure measurements and a BH1750 sensor for digital ambient-light measurement using the I2C communication interface.\n\nThe PCB also includes USB-C power input, a regulated 3.3V power rail, status indication, user buttons, and external sensor/expansion connectivity. The complete hardware design flow was developed through schematic capture, PCB layout, and a 3D PCB render before fabrication.",
+
+    completionDate: "2026",
+
+    technologies: [
+      "ESP32-S3",
+      "I2C",
+      "PCB Design",
+      "Embedded Systems",
+      "KiCad",
+    ],
+
+    components: [
+      {
+        name: "ESP32-S3-WROOM-1",
+        qty: "1",
+        note: "Main microcontroller",
+      },
+      {
+        name: "BMP280",
+        qty: "1",
+        note: "Temperature and barometric pressure sensor",
+      },
+      {
+        name: "BH1750",
+        qty: "1",
+        note: "Digital ambient-light sensor",
+      },
+      {
+        name: "USB-C Connector",
+        qty: "1",
+        note: "Power input",
+      },
+      {
+        name: "3.3V Voltage Regulator",
+        qty: "1",
+        note: "Regulated supply for the logic and sensors",
+      },
+      {
+        name: "Push Buttons",
+        qty: "2",
+        note: "User/control inputs",
+      },
+      {
+        name: "Status LED",
+        qty: "1",
+        note: "Board status indication",
+      },
+      {
+        name: "Supporting Passives",
+        qty: "—",
+        note: "Decoupling, pull-ups and other supporting components",
+      },
+      {
+        name: "Headers/Connectors",
+        qty: "—",
+        note: "External sensor and I/O connectivity",
+      },
+    ],
+
+    features: [
+      "Custom ESP32-S3 based environmental sensor PCB",
+      "BMP280 temperature and barometric pressure sensing",
+      "BH1750 digital ambient-light sensing",
+      "I2C communication interface",
+      "USB-C power input",
+      "Regulated 3.3V power supply",
+      "Onboard status LED and user buttons",
+      "External sensor/expansion connectivity",
+      "Complete schematic → PCB layout → 3D design workflow",
+    ],
+
+    githubLink: "https://github.com/alisolangi1122345-cpu/Environmental-Sensor-Board-PCB.git",
+
+    circuitDiagram: "/project/assets/E-s-board/schemetic.png",
+
+    images: [
+      "/project/assets/E-s-board/3D.png",
+      "/project/assets/E-s-board/Pcb layout.png",
+    ],
+
+    // video: "",
+  },
 };
 
 // window.PROJECTS = projects;

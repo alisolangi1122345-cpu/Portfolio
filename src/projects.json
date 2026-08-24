@@ -36,6 +36,31 @@
     "github": "https://github.com/alisolangi1122345-cpu/Arduino-Smoke-and-Flame-Detection-System.git"
   },
   {
+    "title": "Arduino Water Tank Monitoring & Automatic Pump Control",
+    "image": "./src/A-W-T-M-system/image.png",
+    "alt": "Arduino-based Water Tank Monitoring and Automatic Pump Control System",
+    "description": "An Arduino Uno-based smart water tank monitoring and automatic pump control system using an ultrasonic sensor and a relay module. The system measures the water level in real time, displays the tank percentage on a 16×2 LCD, and automatically turns the water pump ON or OFF based on predefined water level thresholds.",
+    "tags": [
+      "Arduino Uno",
+      "HC-SR04",
+      "Relay Module",
+      "16x2 LCD",
+      "Embedded C"
+    ],
+    "modal": "water-tank-monitoring-system",
+    "github": "https://github.com/alisolangi1122345-cpu/-Automatic-Water-Tank-Level-Controller.git"
+  },
+
+  {
+    "title": "Arduino Obstacle Avoiding Car",
+    "image": "./src/O-A-C/Image.png",
+    "alt": "Arduino-based obstacle avoiding robotic car simulated in Proteus",
+    "description": "Autonomous four-wheel robotic car that uses an HC-SR04 ultrasonic sensor mounted on an SG90 servo to scan the surroundings, while an Arduino UNO controls the motors through an L298N driver and automatically chooses a clear direction when an obstacle is detected.",
+    "tags": ["Arduino UNO", "HC-SR04", "SG90 Servo", "L298N", "Proteus", "C++"],
+    "modal": "arduino-obstacle-avoiding-car",
+    "github": "https://github.com/alisolangi1122345-cpu/-Obstacle-Avoiding-Car.git"
+  },
+  {
     "title": "STM32 Development Board",
     "image": "./src/STM32/3D.png",
     "alt": "STM32 Development Board",
@@ -80,29 +105,15 @@
     "modal": "led-chaser",
     "github": "https://github.com/alisolangi1122345-cpu/LED-Chaser-PCB.git"
   },
-  {
-    "title": "Arduino Water Tank Monitoring & Automatic Pump Control",
-    "image": "./src/A-W-T-M-system/image.png",
-    "alt": "Arduino-based Water Tank Monitoring and Automatic Pump Control System",
-    "description": "An Arduino Uno-based smart water tank monitoring and automatic pump control system using an ultrasonic sensor and a relay module. The system measures the water level in real time, displays the tank percentage on a 16×2 LCD, and automatically turns the water pump ON or OFF based on predefined water level thresholds.",
-    "tags": [
-      "Arduino Uno",
-      "HC-SR04",
-      "Relay Module",
-      "16x2 LCD",
-      "Embedded C"
-    ],
-    "modal": "water-tank-monitoring-system",
-    "github": "https://github.com/alisolangi1122345-cpu/-Automatic-Water-Tank-Level-Controller.git"
-  },
+  
 
   {
-    "title": "Arduino Obstacle Avoiding Car",
-    "image": "./src/O-A-C/Image.png",
-    "alt": "Arduino-based obstacle avoiding robotic car simulated in Proteus",
-    "description": "Autonomous four-wheel robotic car that uses an HC-SR04 ultrasonic sensor mounted on an SG90 servo to scan the surroundings, while an Arduino UNO controls the motors through an L298N driver and automatically chooses a clear direction when an obstacle is detected.",
-    "tags": ["Arduino UNO", "HC-SR04", "SG90 Servo", "L298N", "Proteus", "C++"],
-    "modal": "arduino-obstacle-avoiding-car",
-    "github": "https://github.com/alisolangi1122345-cpu/-Obstacle-Avoiding-Car.git"
-  }
+  "title": "Environmental Sensor Board",
+  "image": "./src/E-s-board/3D.png",
+  "alt": "Environmental Sensor Board PCB",
+  "description": "A custom-designed Environmental Sensor Board featuring an ESP32-S3, BMP280 temperature and pressure sensor, BH1750 ambient light sensor, I2C communication, USB-C power input and regulated 3.3V supply, demonstrating practical embedded systems and PCB design.",
+  "tags": ["PCB", "ESP32", "Embedded"],
+  "modal": "environmental-sensor-board",
+  "github": "https://github.com/alisolangi1122345-cpu/Environmental-Sensor-Board-PCB.git"
+}
 ]
