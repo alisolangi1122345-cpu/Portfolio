@@ -339,7 +339,37 @@
 
     update();
   }
+/* ---------- Education Timeline Scroll Glow ---------- */
 
+const educationTimeline = document.querySelector(".education__grid");
+
+if (educationTimeline) {
+  function updateTimeline() {
+    const rect = educationTimeline.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    const start = windowHeight * 0.75;
+    const end = windowHeight * 0.25;
+
+    const progress =
+      ((start - rect.top) / (start - end)) * 100;
+
+    const clampedProgress = Math.max(
+      0,
+      Math.min(100, progress)
+    );
+
+    educationTimeline.style.setProperty(
+      "--timeline-progress",
+      `${clampedProgress}%`
+    );
+  }
+
+  window.addEventListener("scroll", updateTimeline);
+  window.addEventListener("resize", updateTimeline);
+
+  updateTimeline();
+}
   /* ---------------------------------------------------
   4. Ambient hero canvas — drifting "signal node" particles
   connected by faint traces, evoking a live PCB net.
