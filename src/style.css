@@ -1129,16 +1129,53 @@ textarea:focus-visible {
 .edu-card h3 {
   font-family: var(--font-display);
   margin-block: 6px;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
 }
 
 /* Description */
 .edu-card p {
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.6;
 }
+/* ---------- Academic Result Badge ---------- */
 
+.edu-result {
+  margin-top: 16px;
+}
+
+.result-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 6px 12px;
+
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+
+  color: var(--accent-cyan);
+
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+
+  border-radius: 999px;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.result-badge strong {
+  color: var(--text-primary);
+}
+
+.edu-card:hover .result-badge {
+  background: rgba(34, 211, 238, 0.12);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.15);
+}
 /* ---------- Mobile Timeline ---------- */
 
 @media (max-width: 700px) {
@@ -1186,7 +1223,7 @@ textarea:focus-visible {
   }
 
   .edu-card p {
-    font-size: 0.875rem;
+    font-size: 0.9rem;
   }
 }
 
